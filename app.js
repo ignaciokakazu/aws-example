@@ -56,10 +56,10 @@ app.post('/signup', function (req, res) {
             console.log('DDB Error: ' + err);
         } else {
             sns.publish({
-                'Message': 'Name: ' + req.body.name + "\r\nEmail: " + req.body.email
+                'Message': 'Producto: ' + req.body.name + "\r\nPrecio: " + req.body.email
                     + "\r\nPreviewAccess: " + req.body.previewAccess
                     + "\r\nTheme: " + req.body.theme,
-                'Subject': 'New user sign up!!!',
+                'Subject': 'New producto!!!',
                 'TopicArn': snsTopic
             }, function (err, data) {
                 if (err) {
