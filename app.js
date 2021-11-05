@@ -34,10 +34,9 @@ app.post('/signup', function (req, res) {
     console.log(`DDB TABLE NAME = ${ddbTable}`);
 
     var item = {
-        'email': { 'S': req.body.email },
-        'name': { 'S': req.body.name },
-        'preview': { 'S': req.body.previewAccess },
-        'theme': { 'S': req.body.theme }
+        'id': { 'S': req.body.id },
+        'nombre': { 'S': req.body.nombre },
+        'precio': { 'S': req.body.precio }
     };
 
     ddb.putItem({
@@ -56,9 +55,7 @@ app.post('/signup', function (req, res) {
             console.log('DDB Error: ' + err);
         } else {
             sns.publish({
-                'Message': 'Producto: ' + req.body.name + "\r\nPrecio: " + req.body.email
-                    + "\r\nPreviewAccess: " + req.body.previewAccess
-                    + "\r\nTheme: " + req.body.theme,
+                'Message': 'Id: ' + req.body.id + '\r\nProducto: ' + req.body.nombre + "\r\nPrecio: " + req.body.precio,
                 'Subject': 'New producto!!!',
                 'TopicArn': snsTopic
             }, function (err, data) {

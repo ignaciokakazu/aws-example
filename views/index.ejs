@@ -45,7 +45,7 @@
       <div class="jumbotron">
         <h1>Bienvenidos a Node.js desde AWS!</h1>
         <p class="lead">We're pretty thrilled to unveil our latest creation. Sign up below to be notified when we officially launch!</p>
-        <p><a class="btn btn-lg btn-success"  data-toggle="modal" href="#signupModal">Sign up today</a></p>
+        <p><a class="btn btn-lg btn-success"  data-toggle="modal" href="#signupModal">Cargar producto</a></p>
       </div>
 
 
@@ -65,19 +65,16 @@
                <form id="signupForm" role="form">
                  <input type="hidden" id="theme" name="theme" value="<%= theme %>"/>
                  <div class="form-group">
-                   <label for="name">Nombre Producto (es nombre y es el ID... si, soy un ladri)</label>
-                   <input type="text" class="form-control" id="name" name="name" placeholder="Your name">
+                   <label for="name">ID</label>
+                   <input type="number" class="form-control" id="id" placeholder="ID numérico">
                  </div>
+                 <div class="form-group">
+                  <label for="name">Nombre</label>
+                  <input type="text" class="form-control" id="nombre" placeholder="Producto">
+                </div>
                  <div class="form-group">
                    <label for="email">Precio</label>
-                   <input type="number" class="form-control" id="email" name="email" placeholder="Your email address">
-                 </div>
-                 <div class="form-group">
-                   <label for="previewAccess">Interested in Preview Access?</label>
-                   <select class="form-control" name="previewAccess">
-                     <option>Yes</option>
-                     <option>No</option>
-                   </select>
+                   <input type="number" class="form-control" id="precio" placeholder="Precio">
                  </div>
              </div>
              <div class="modal-footer">
